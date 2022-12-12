@@ -6,6 +6,8 @@
   "scripts": {
     "build": "tsc --build",
     "prestart": "npm run build",
+    "resources": "copyfiles --error --up 1 ./src/**/* ./dist",
+    "postbuild": "npm run resources",
     "start": "cross-env NODE_ENV=production node dist/app.js",
     "dev": "cross-env NODE_ENV=development npx nodemon src/app.ts"
   },
@@ -23,6 +25,7 @@
     "@types/cookie-parser": "^1.4.3",
     "@types/express": "^4.17.14",
     "@types/express-session": "^1.17.5",
+    "copyfiles": "^2.4.1",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.4"
   },

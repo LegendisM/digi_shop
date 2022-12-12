@@ -5,7 +5,7 @@
   "main": "dist/app.js",
   "scripts": {
     "build": "tsc --build",
-    "clean": "tsc --clean",
+    "prestart": "npm run build",
     "start": "cross-env NODE_ENV=production node dist/app.js",
     "dev": "cross-env NODE_ENV=development npx nodemon src/app.ts"
   },

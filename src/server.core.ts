@@ -14,8 +14,8 @@ export class ServerCore {
         this.instance = express();
         this.http = http.createServer(this.instance);
         this.config();
-        this.routes();
         this.assets();
+        this.routes();
         this.listen();
     }
 

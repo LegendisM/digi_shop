@@ -13,104 +13,76 @@
 
 <body>
     <div class="container-fluid g-0">
-        <%- include("includes/header.view.ejs") -%> 
+        <%- include("includes/header.view.ejs") -%>
 
-        <main id="products" class="p-3">
-            <h3>محصولات ویژه</h3>
-            <section class="row justify-content-evenly">
-                <article class="col-auto mt-2">
-                    <img src="assets/images/products/graphic_book.jpg" alt="">
-                    <center class="pt-2">
-                        <h4>آموزش فتوشاپ 1</h4>
-                    </center>
-                </article>
-                <article class="col-auto mt-2">
-                    <img src="assets/images/products/graphic_book.jpg" alt="">
-                    <center class="pt-2">
-                        <h4>آموزش فتوشاپ 2</h4>
-                    </center>
-                </article>
-                <article class="col-auto mt-2">
-                    <img src="assets/images/products/graphic_book.jpg" alt="">
-                    <center class="pt-2">
-                        <h4>آموزش فتوشاپ 3</h4>
-                    </center>
-                </article>
-                <article class="col-auto mt-2">
-                    <img src="assets/images/products/coffe.jpg" alt="">
-                    <center class="pt-2">
-                        <h4>آموزش تولید قهوه</h4>
-                    </center>
-                </article>
-            </section>
-            <br>
-            <h3>محصولات جدید</h3>
-            <section class="row justify-content-evenly">
-                <article class="col-auto mt-2">
-                    <img src="assets/images/products/graphic_book.jpg" alt="">
-                    <center class="pt-2">
-                        <h4>آموزش فتوشاپ 1</h4>
-                    </center>
-                </article>
-                <article class="col-auto mt-2">
-                    <img src="assets/images/products/graphic_book.jpg" alt="">
-                    <center class="pt-2">
-                        <h4>آموزش فتوشاپ 2</h4>
-                    </center>
-                </article>
-                <article class="col-auto mt-2">
-                    <img src="assets/images/products/graphic_book.jpg" alt="">
-                    <center class="pt-2">
-                        <h4>آموزش فتوشاپ 3</h4>
-                    </center>
-                </article>
-                <article class="col-auto mt-2">
-                    <img src="assets/images/products/coffe.jpg" alt="">
-                    <center class="pt-2">
-                        <h4>آموزش تولید قهوه</h4>
-                    </center>
-                </article>
-            </section>
-            <br>
-        </main>
+            <main id="products" class="p-3">
+                <h3>محصولات ویژه</h3>
+                <section class="row justify-content-evenly">
+                    <% products.forEach((product)=> { %>
+                        <article class="col-auto mt-2">
+                            <img src="assets/images/products/graphic_book.jpg" alt="">
+                            <center class="pt-2">
+                                <h4>
+                                    <%= product.name %>
+                                </h4>
+                            </center>
+                        </article>
+                        <% }) %>
+                </section>
+                <br>
+                <h3>محصولات جدید</h3>
+                <section class="row justify-content-evenly">
+                    <% products.forEach((product)=> { %>
+                        <article class="col-auto mt-2">
+                            <img src="assets/images/products/graphic_book.jpg" alt="">
+                            <center class="pt-2">
+                                <h4>
+                                    <%= product.name %>
+                                </h4>
+                            </center>
+                        </article>
+                        <% }) %>
+                </section>
+                <br>
+            </main>
 
-        <%- include("includes/footer.view.ejs") -%> 
+            <%- include("includes/footer.view.ejs") -%>
 
-        <div id="accountModal" class="modal row">
-            <div class="modal-content col-auto">
-                <h2>حساب کاربری</h2>
-                <div>
-                    <input type="text" name="username" id="username" placeholder="نام کاربری">
-                    <input type="password" name="password" id="password" placeholder="رمز عبور">
-                    <button type="submit">ورود</button>
+                <div id="accountModal" class="modal row">
+                    <div class="modal-content col-auto">
+                        <h2>حساب کاربری</h2>
+                        <div>
+                            <input type="text" name="username" id="username" placeholder="نام کاربری">
+                            <input type="password" name="password" id="password" placeholder="رمز عبور">
+                            <button type="submit">ورود</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-        <div id="cartModal" class="modal">
-            <div class="modal-content">
-                <h2>سبد خرید</h2>
-                <div class="cart-box">
-                    <article>
-                        <img src="assets/images/products/graphic_book.jpg" alt="">
-                        <h4>آموزش فتوشاپ 1</h4>
-                        <button>حذف</button>
-                    </article>
-                    <article>
-                        <img src="assets/images/products/graphic_book.jpg" alt="">
-                        <h4>آموزش فتوشاپ 2</h4>
-                        <button>حذف</button>
-                    </article>
-                    <article>
-                        <img src="assets/images/products/coffe.jpg" alt="">
-                        <h4>آموزش تولید قهوه</h4>
-                        <button>حذف</button>
-                    </article>
-                    <br>
-                    <button>تکمیل سبد خرید</button>
+                <div id="cartModal" class="modal">
+                    <div class="modal-content">
+                        <h2>سبد خرید</h2>
+                        <div class="cart-box">
+                            <article>
+                                <img src="assets/images/products/graphic_book.jpg" alt="">
+                                <h4>آموزش فتوشاپ 1</h4>
+                                <button>حذف</button>
+                            </article>
+                            <article>
+                                <img src="assets/images/products/graphic_book.jpg" alt="">
+                                <h4>آموزش فتوشاپ 2</h4>
+                                <button>حذف</button>
+                            </article>
+                            <article>
+                                <img src="assets/images/products/coffe.jpg" alt="">
+                                <h4>آموزش تولید قهوه</h4>
+                                <button>حذف</button>
+                            </article>
+                            <br>
+                            <button>تکمیل سبد خرید</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
     </div>
 
     <script src="js/script.js"></script>
